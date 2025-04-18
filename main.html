@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renegade Squad - Accueil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #000;
+      --bg-dark-alt: #111;
+      --text-light: #ccc;
+      --border-med: #444;
+      --primary: #facc15;
+      --transition: 0.3s ease;
+      --font: 'Orbitron', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: var(--font);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-alt));
+      color:#fff;
+      min-height:100vh;
+      overflow-x:hidden;
+    }
+    header {
+      text-align:center;
+      padding:3rem 2rem;
+      background: var(--bg-dark-alt);
+      margin-bottom:2rem;
+    }
+    header h1 { font-size:2.5rem; }
+    header p { color:#aaa; margin-top:1rem; }
+    header nav { margin-top:1.5rem; }
+    header nav a {
+      background:transparent;
+      border:2px solid var(--primary);
+      color:var(--primary);
+      padding:0.5rem 1rem;
+      border-radius:6px;
+      font-weight:700;
+      transition: background var(--transition), color var(--transition);
+      text-decoration:none;
+    }
+    header nav a:hover {
+      background:var(--primary);
+      color:#000;
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:2rem;
+      padding:0 2rem;
+    }
+    .card {
+      background: linear-gradient(180deg,#1a1a1a,#000);
+      border:1px solid var(--border-med);
+      border-radius:16px;
+      padding:2rem;
+      text-align:center;
+      transition:transform var(--transition),box-shadow var(--transition);
+    }
+    .card:hover {
+      transform:translateY(-8px);
+      box-shadow:0 0 25px rgba(138,43,226,0.4);
+    }
+    .icon { font-size:2.5rem; margin-bottom:1rem; text-shadow:0 0 8px currentColor; }
+    .card h2 { font-size:1.75rem; margin-bottom:0.75rem; }
+    .card p { color:var(--text-light); line-height:1.4; }
+    .card .btn {
+      display:inline-block;
+      background:var(--primary);
+      color:#000;
+      padding:0.75rem 1.5rem;
+      border-radius:8px;
+      font-weight:700;
+      transition:background var(--transition),transform var(--transition);
+      text-decoration:none;
+    }
+    .card .btn:hover { background:#fde047; transform:scale(1.05); }
+    .planque {
+      background:linear-gradient(180deg,#222,#111);
+      border:1px solid var(--border-med);
+      border-radius:16px;
+      padding:2.5rem;
+      text-align:center;
+      box-shadow:0 0 30px rgba(255,255,255,0.05);
+      max-width:700px;
+      margin:2rem auto;
+    }
+    .planque h3 { font-size:1.8rem; margin-bottom:0.5rem; }
+    .planque p { color:#aaa; }
+    footer { text-align:center; color:#666; font-size:0.8rem; margin:2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RENEGADE SQUAD</h1>
+    <p>Pas juste un crew. Une vision, une force, une loyauté.</p>
+    <nav>
+      <a href="uniformes.html">Voir les uniformes</a>
+    </nav>
+  </header>
+  <section class="grid">
+    <div class="card"><div class="icon">🛡️</div><h2>Code d’Honneur</h2><p>Respect, entraide, discrétion. Si t’es avec nous, tu fais partie à 100 %.</p></div>
+    <div class="card"><div class="icon">👥</div><h2>Le Crew</h2><p>Chaque membre est essentiel. Rôles précis, synergie, respect mutuel.</p></div>
+    <div class="card"><div class="icon">📄</div><h2>Règlement Officiel</h2><p>C’est plus qu’un texte, c’est notre fondation.</p><a href="https://drive.google.com/file/d/1_jQgb2iwgkYZjfZbJaz_avJB5_Yeo3W7/view?usp=drive_link" download class="btn">Télécharger PDF</a></div>
+  </section>
+  <section class="planque">
+    <h3>📍 Planque Principale</h3>
+    <p>Lieu réservé aux membres confirmés</p>
+  </section>
+  <footer>© 2025 Renegade Squad — Tous droits réservés</footer>
+</body>
+</html>

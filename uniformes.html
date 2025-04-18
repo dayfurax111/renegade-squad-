@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uniformes Renegade Squad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #000;
+      --bg-dark-alt: #111;
+      --gray-light: #ccc;
+      --yellow: #facc15;
+      --yellow-hover: #fde047;
+      --transition: 0.3s ease;
+      --font-main: 'Orbitron', sans-serif;
+      --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: var(--font-main);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-alt));
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      opacity: 0;
+      animation: fadeInPage 1s forwards;
+      padding-top: 2rem; /* Ajoute de l'espace en haut */
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .note {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+      color: var(--yellow);
+      font-weight: 700;
+      letter-spacing: 1px;
+      max-width: 1200px;
+      width: 100%;
+      margin-top: 0; /* Assure que le texte soit tout en haut */
+    }
+
+    .uniformes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .uniforme {
+      background: #222;
+      border: 1px solid var(--gray-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: var(--box-shadow);
+      position: relative;
+    }
+
+    .uniforme:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .uniforme img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .uniforme img:hover {
+      transform: scale(1.1);
+    }
+
+    .uniforme h3 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .uniforme p {
+      color: var(--gray-light);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Animation for uniformes section */
+    .uniformes .uniforme {
+      opacity: 0;
+      animation: fadeInUniformes 1s forwards;
+    }
+
+    @keyframes fadeInUniformes {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="note">
+    <p><strong>Les uniformes présentés ci-dessous ne sont que des exemples inspirants. Ils ne représentent pas les uniformes officiels du groupe, mais pourraient bien s'en rapprocher dans le futur.</strong></p>
+  </div>
+
+  <div class="uniformes">
+    <div class="uniforme">
+      <img src="uniforms1.jpeg" alt="Uniforme 1">
+      <h3>Uniforme 1</h3>
+      <p>Ce premier uniforme présente un style urbain combinant une veste à capuche et un pantalon cargo. Bien que ce ne soit pas l'uniforme officiel du groupe, il reflète parfaitement l'esprit de la rue et la fonctionnalité recherchée.</p>
+    </div>
+    <div class="uniforme">
+      <img src="uniforms2.jpeg" alt="Uniforme 2">
+      <h3>Uniforme 2</h3>
+      <p>Ce modèle combine des influences tactiques et streetwear, avec des motifs camouflage et des matériaux résistants. Bien que non officiel, il incarne le style robuste et ingénieux du groupe Renegade Squad.</p>
+    </div>
+    <div class="uniforme">
+      <img src="uniforms3.jpeg" alt="Uniforme 3">
+      <h3>Uniforme 3</h3>
+      <p>Ce modèle présente un mélange audacieux de noir et d'accents néon, incarnant l'énergie de Renegade Squad. Bien que ce ne soit pas l'uniforme officiel, il reflète l'esthétique et la direction stylistique du groupe.</p>
+    </div>
+    <div class="uniforme">
+      <img src="uniforms4.jpeg" alt="Uniforme 4">
+      <h3>Uniforme 4</h3>
+      <p>Un look épuré qui fusionne la mode urbaine moderne avec des éléments pratiques tels qu'un gilet tactique. Bien que non officiel, il sert d'inspiration pour l'attitude de l'uniforme du groupe.</p>
+    </div>
+    <center><div class="uniforme">
+      <img src="uniforms5.jpeg" alt="Uniforme 5">
+      <h3>Uniforme 5</h3>
+      <p>Avec son design utilitaire et robuste, cet uniforme allie style et fonctionnalité. Bien que ce ne soit pas le modèle final, il s'aligne avec l'esthétique et l'esprit du Renegade Squad.</p>
+    </div></center>
+  </div>
+
+  <script>
+    // Effect to make the uniformes fade in one after another with a delay
+    const uniforms = document.querySelectorAll('.uniforme');
+    uniforms.forEach((uniform, index) => {
+      uniform.style.animationDelay = `${index * 0.2}s`;
+    });
+  </script>
+  
+</body>
+</html>

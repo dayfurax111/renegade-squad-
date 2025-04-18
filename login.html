@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renegade Squad - Connexion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #000;
+      --bg-dark-alt: #111;
+      --gray-light: #ccc;
+      --yellow: #facc15;
+      --yellow-hover: #fde047;
+      --transition: 0.3s ease;
+      --font-main: 'Orbitron', sans-serif;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: var(--font-main);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-alt));
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeInPage 1s forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    #login {
+      background: rgba(20,20,20,0.9);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    #login h2 {
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    #login input {
+      width: 100%;
+      margin: 0.5rem 0;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--gray-light);
+      border-radius: 6px;
+      background: #333;
+      color: #bbb;
+      font-size: 1rem;
+      transition: border var(--transition);
+    }
+
+    #login input:focus {
+      outline: none;
+      border-color: var(--yellow);
+    }
+
+    #login button {
+      width: 100%;
+      margin-top: 1rem;
+      background: var(--yellow);
+      color: #000;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    #login button:hover {
+      background: var(--yellow-hover);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="login">
+    <h2>Accès réservé</h2>
+    <input type="text" id="username" placeholder="Nom d'utilisateur" />
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button id="enterBtn">Entrer</button>
+  </div>
+
+  <script>
+    document.getElementById('enterBtn').addEventListener('click', () => {
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      const validU = 'admin', validP = 'renegade123';
+      if (u === validU && p === validP) {
+        window.location.href = 'main.html';
+      } else {
+        alert('Identifiants incorrects !');
+      }
+    });
+  </script>
+
+</body>
+</html>

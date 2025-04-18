@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renegade Squad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #000;
+      --bg-dark-alt: #111;
+      --gray-light: #ccc;
+      --yellow: #facc15;
+      --yellow-hover: #fde047;
+      --transition: 0.3s ease;
+      --font-main: 'Orbitron', sans-serif;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: var(--font-main);
+      background: linear-gradient(135deg, var(--bg-dark), var(--bg-dark-alt));
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      animation: fadeInPage 1s forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .fullscreen {
+      position: fixed; top:0; left:0;
+      width:100%; height:100%;
+      display:flex; align-items:center; justify-content:center;
+      background: radial-gradient(circle, var(--bg-dark-alt) 0%, var(--bg-dark) 80%);
+      z-index:100;
+      transition: opacity 0.6s ease;
+    }
+
+    #intro {
+      flex-direction: column;
+      cursor: pointer;
+    }
+    #intro h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 20px rgba(255,255,255,0.3);
+      animation: glitch 1.2s infinite;
+    }
+    #intro p {
+      margin-top: 1rem;
+      color: #aaa;
+      font-size: 1.2rem;
+      animation: blink 1.4s infinite;
+    }
+
+    @keyframes blink {
+      0%,100%{opacity:1}
+      50%{opacity:0.3}
+    }
+    @keyframes glitch {
+      0%,100%{transform:none;text-shadow:1px 1px 4px #f00,-1px -1px 4px #00f}
+      33%{transform:translate(2px,-2px);text-shadow:-1px -1px 4px #f00,1px 1px 4px #00f}
+      66%{transform:translate(-2px,2px);text-shadow:1px 1px 4px #f00,-1px -1px 4px #00f}
+    }
+  </style>
+</head>
+<body>
+
+  <div id="intro" class="fullscreen">
+    <h1>RENEGADE SQUAD</h1>
+    <p>Clique pour entrer</p>
+  </div>
+
+  <script>
+    const intro = document.getElementById('intro');
+
+    intro.addEventListener('click', () => {
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.display = 'none';
+        window.location.href = 'login.html';
+      }, 600);
+    });
+  </script>
+</body>
+</html>
